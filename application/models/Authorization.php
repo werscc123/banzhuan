@@ -37,7 +37,11 @@ class Authorization extends MY_Model{
         return $a_header.'.'.$a_payload.'.'.$sign;
     }
     public function checkAuth($authorization,$auth_key){
-        list($a_header,$a_payload,$a_sign) = explode('.',$authorization);
+        @list($a_header,$a_payload,$a_sign) = explode('.',$authorization);
+        if(!$a_payload){
+            $this->_setError(1000,'authorization error!');
+            return false;
+        }
         //spid
         if(!$payload = base64_decode($a_payload,true)){
             $this->_setError(1000,'jwt error');
