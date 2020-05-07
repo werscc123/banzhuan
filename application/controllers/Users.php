@@ -52,7 +52,7 @@ class Users extends MY_Controller{
             'avatar'=>$this->user_info['avatar'],
             'email'=>$this->user_info['email'],
             'point'=>$this->user_info['point']?intval($this->user_info['point']):0,
-            'point_time'=>$this->user_info['point_time']?intval($this->user_info['']):0,
+            'point_time'=>$this->user_info['point_time']?intval($this->user_info['point_time']):0,
             'integral'=>$this->user_info['integral']?intval($this->user_info['integral']):0
         ];
         $this->display('json',$data);
