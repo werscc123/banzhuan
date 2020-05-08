@@ -15,7 +15,7 @@ class Coupon extends MY_Model{
         if($req['level']==1){
             //金箱子
             $data['number'] = 150;
-        }elseif($req['level'==2]){
+        }elseif($req['level']==2){
             $data['number'] = 100;
         }else{
             $data['number'] = 50;

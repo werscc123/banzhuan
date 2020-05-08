@@ -33,6 +33,7 @@ class User extends MY_Model{
     public function rankings($req){
         $this->db->reset_query();
         $this->db->from($this->table_name);
+        $this->db->where("point>0");
         $this->db->order_by('point DESC');
         $this->db->limit($req['limit']);
         $array = $this->db->get()->result_array();
