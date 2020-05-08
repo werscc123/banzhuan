@@ -45,7 +45,7 @@ class User extends MY_Model{
         $current_user_point = $req['user_info']['point'];
         $query = $this->db->query("select count(*) as count from t_user where point>".$current_user_point);
         $row = $query->row();
-        $current_user_no = $row->count;
+        $current_user_no = $row->count+1;
         $data = [];
         $i = 1;
         foreach($array as $value){
